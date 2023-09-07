@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <script type="text/javascript">
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ["品種貓", "價格(台幣)"],
+          ["蘇格蘭摺耳貓", 24000],
+          ["斯芬克斯貓", 27000],
+          ["英國短毛貓", 45000],
+          ["俄羅斯藍貓", 60000],
+          ["彼得禿貓", 80000],
+          ["波斯貓", 135000],
+          ["防敏感貓", 180000],
+          ["孟加拉豹貓", 250000],
+          ["熱帶草原貓", 550000],
+          ["阿什拉", 1000000],
+        ]);
+        var options = {
+          title: "品種貓價格比例 ",
+        };
+
+        var chart = new google.visualization.PieChart(
+          document.getElementById("piechart")
+        );
+
+        chart.draw(data, options);
+      }
+    </script>
+
+    <link rel="stylesheet" href="./style.css" />
+    <title>貓咪資訊網</title>
+  </head>
+  <body>
+    <header>
+      <nav class="top">
+        <h1>貓貓資訊網</h1>
+        <p>
+          有關貓的分類，由於國度不同，加上各國文字的翻譯原因，產生了許多有差異的版本。但萬變不離其宗，除了名稱差異之外，不管怎么分，都脫離不了以下幾種方法：
+        </p>
+      </nav>
+
+      <nav class="list">
+        <ul class="drop-down-menu">
+          <li><a class="active" href="./index.html">網站首頁</a></li>
+
+          <li>
+            <a href="#">依生存環境而分</a>
+            <ul>
+              <li><a href="./wildcat.html">1.野貓</a></li>
+              <li><a href="./housecat.html">2.家貓</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">以品種培育而分</a>
+            <ul>
+              <li><a href="#">1.純種貓</a></li>
+              <li><a href="./mongrel-cat.html">2.混種貓</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="#">以貓的被毛長短而分</a>
+            <ul>
+              <li><a href="./long-haired-cat.html">1.長毛貓</a></li>
+              <li><a href="./short-haired-cat.html">2.短毛貓</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main3>
+      <h2>純種貓</h2>
+
+      <div class="japan">
+        <img src="./images/pexels-peng-louis-1643457.jpg" alt="阿毛伸展圖" />
+        <div class="japanInfo">
+          <p>
+            是指經過數年、數代的時間，由人們精心培育而成的貓種，並嚴格控制其繁殖程式，以避免品種退化，以及經過國際貓組織認可的品種。這類貓的遺傳特性很穩定，小貓與父母貓之間具有相似特性，而且每隻貓都有血統紀錄，包括性別、品種、體態特徵及其祖先等數據。
+          </p>
+
+          <p>目前的品種貓有很多種，以下為世界最貴品種貓 TOP10：</p>
+          <ol>
+            <li>蘇格蘭摺耳貓：約2.4萬~4.5萬台幣之間</li>
+            <li>斯芬克斯貓：約2.7萬~6萬台幣之間</li>
+            <li>英國短毛貓：約4.5萬~6萬台幣之間</li>
+            <li>俄羅斯藍貓：約1.2萬~9萬之間</li>
+            <li>彼得禿貓：約5.1萬~9萬之間</li>
+            <li>波斯貓：約5.4萬~16.5萬之間</li>
+            <li>防敏感貓：約18萬台幣</li>
+            <li>孟加拉豹貓：約12萬~30萬台幣</li>
+            <li>熱帶草原貓：約30萬~75萬台幣</li>
+            <li id="last">阿什拉：約66萬~370萬台幣</li>
+          </ol>
+        </div>
+        <div id="piechart"></div>
+      </div>
+      <hr />
+
+      <div class="japanLeft">
+        <div class="text">
+          <h2>第十名：蘇格蘭摺耳貓</h2>
+          <br />
+          <p>
+            蘇格蘭摺耳貓（Scottish
+            Fold）最初在英國蘇格蘭被發現，因而得名。個性相當溫順，「萌萌」的外表非常療癒人心。
+          </p>
+          <p>
+            雖然外型可愛迷人，但牠其實存在遺傳性骨骼疾病，是一出生就深受病痛所苦的突變貓種，有一定程度的發病風險，比如耳朵因軟骨病而下折，或時常以站姿減緩前肢因變形而帶來的疼痛。是現在被廣為呼籲停止繁殖的品種。
+          </p>
+          <h2>第九名：斯芬克斯貓</h2>
+          <p>
+            斯芬克斯貓（Sphynx）因外型與人面獅身像斯芬克斯相似而得名，是自然基因突變的品種。最大的特徵是除了臉部及四肢有些許薄軟的胎毛之外，全身沒有毛髮，皮膚呈現褶皺狀。
+          </p>
+          <p>
+            雖然有人覺得牠看起來有點「恐怖」，但其實牠不僅沒有攻擊性，而且活潑、獨立、情感豐富，可以與其他貓狗們相處融洽，飼養的人也不在少數。
+          </p>
+          <h2>第八名：英國短毛貓</h2>
+          <p>
+            如果你看過童話《愛麗絲夢遊仙境》，裡面咧嘴微笑的「柴郡貓」其現實原型就是英國短毛貓（BritishShorthair）。
+          </p>
+          <p>
+            英國短毛貓體型圓胖、四肢粗短，有著密而短的毛髮和圓滾滾的臉龐，又大又圓的眼睛和平易近人的溫和個性，是極受歡迎的常見品種。
+          </p>
+          <p>品種貓價格範圍如下：</p>
+          <h2>第七名：俄羅斯藍貓</h2>
+          <p>
+            擁有「貴族貓咪」之稱的俄羅斯藍貓（Russian
+            Blue），是許多名門貴族鍾愛的品種。一身銀藍色光澤的短毛，眼神迷人而冷靜，給人一種高貴優雅的感覺。此外牠的體態修長、步調輕盈，一舉一動都充分展現貴族的風度與氣質。
+          </p>
+          <h2>第六名：彼得禿貓</h2>
+          <p>
+            具有俄羅斯血統的彼得禿貓（Peterbald），雖然屬於無毛貓的品種，但皮膚表層仍有幼嫩的細毛。牠的身軀與頭部帶有些許皺褶，有著圓弧形的大耳，腿部細長，鼻子較短，擁有長鞭狀的尾巴。
+          </p>
+          <p>
+            彼得禿貓好奇、聰明、充滿活力，相對其他外型較可愛的貓咪品種，牠修長的腿部加上具有類似脫髮基因的東方短毛貓，反而帶有東方的優美氣質。
+          </p>
+          <h2>第五名：波斯貓</h2>
+          <p>
+            波斯貓（Persian
+            cat）堪稱貓中貴族。身軀與四肢粗壯，頭型圓潤，眼睛又大又圓。
+          </p>
+          <p>
+            牠天生性情溫和，不喜歡高度耗體力的運動，喜歡慵懶地依靠在散落著和煦陽光的窗旁，偶爾興致一來也會突然充滿活力地與人互動。與生俱來的特質，形塑一種風度翩翩且優雅高貴的嬌態，深受愛貓人士的喜愛。
+          </p>
+          <h2>第四名：防敏感貓</h2>
+          <p>
+            有些人會對貓產生過敏反應是因受到其皮膚酵素和唾液的成分影響，導致一接觸到貓咪就會流淚、流鼻涕甚至頭暈目眩。
+          </p>
+          <p>
+            美國加州Allerca公司人工培育出的特殊品種防敏感貓（Allerca
+            hypoallergenic
+            cat），讓希望飼養貓卻又怕過敏的愛貓人士得以實現照顧毛小孩的願望。
+          </p>
+          <h2>第三名：孟加拉豹貓</h2>
+          <p>
+            孟加拉豹貓（Bengal）是將馴化的虎斑家貓和亞洲豹貓進行交配的混種貓。最明顯的特徵就是一身金色和黑色斑紋交錯而成的豹紋。孟加拉貓體格強健，活力充沛，充滿自信和好奇心，喜歡追逐與攀爬。
+          </p>
+          <p>
+            初代的孟加拉貓仍有著野生獸性，具有攻擊性。隨著配種代數愈多，性格會趨於溫馴，一般經過四代繁衍後的孟加拉貓，就已能安全飼養。
+          </p>
+          <h2>第二名：熱帶草原貓</h2>
+          <p>
+            熱帶草原貓（Savannah
+            cat）是非洲藪貓與家貓的後代。體型巨大，有著如豹一樣的漂亮毛皮，不僅擁有極佳的跳躍力，可以原地起跳2公尺以上，而且與其他貓咪不同，喜歡玩水，有的熱帶草原貓甚至還會游泳。牠們也非常聰明，經過訓練後可以學習如坐下、臥躺或握手等基本動作。
+          </p>
+          <p>
+            熱帶草原貓因為繁殖難度高，必須花費大量金錢才能提高繁衍的成功率，因此數量稀少，身價不斐。
+          </p>
+
+          <h2>第一名：阿什拉</h2>
+          <p>
+            阿什拉（Ashera）是2007年由一位英國寵物商培育出來的混血品種，它的血統介於非洲藪貓、亞洲豹貓和普通家貓之間，是目前世界上身價最高的貓咪。
+          </p>
+          <p>
+            擁有家貓的玲瓏體態和豹貓的深邃眼神，身上遍布類似豹的斑點和花紋，外型儼然是隻小獵豹，但卻性情溫順、善解人意，也能夠與其他寵物和平共處，壽命長達25年，培育數量極少，是許多富豪和貴族們指定飼養的品種。
+          </p>
+        </div>
+      </div>
+    </main3>
+    <script
+      count="200"
+      src="https://cdnjs.cloudflare.com/ajax/libs/canvas-nest.js/2.0.4/canvas-nest.js"
+      integrity="sha512-P+NGabN/TJDOnCVOFJO+E06TBm4i+M8dTT91lWg/8UpwLrzicEXIypmABPpA47D0x6r+yxFHjYIZKWhc1h7xlQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>

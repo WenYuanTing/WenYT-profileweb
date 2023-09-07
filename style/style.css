@@ -1,0 +1,177 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body header nav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  padding: 1rem 3rem;
+}
+body header nav ul {
+  display: flex;
+}
+body header nav ul li {
+  padding-right: 2rem;
+  list-style-type: none;
+}
+body header nav ul li a {
+  color: black;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+body header nav ul li a:hover {
+  color: rgb(59, 221, 181);
+}
+body main section.introduce {
+  background-color: white;
+  min-height: 70vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+body main section.introduce .info {
+  flex-basis: 400px;
+}
+body main section.introduce .info h1 {
+  font-size: 3.5rem;
+}
+body main section.introduce .info h2 {
+  font-size: 1rem;
+}
+body main section.introduce .info a {
+  text-decoration: none;
+  background-color: rgb(54, 212, 138);
+  border-radius: 20px;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 2rem;
+}
+body main section.introduce .info a:hover {
+  transform: scale(1.2);
+}
+body main section.introduce img {
+  flex-basis: 300px;
+  max-width: 30vw;
+}
+body main section.aboutMe {
+  background-color: rgb(231, 255, 233);
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body main section.aboutMe .about {
+  width: 50%;
+  text-align: center;
+}
+body main section.aboutMe .about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+body main section.aboutMe .progress-area p {
+  margin: 0.5rem 0rem;
+}
+body main section.aboutMe .progress-area .progress-bar-area {
+  margin-top: 2rem;
+}
+body main section.resume {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+body main section.resume .table {
+  flex: 5 1 500px;
+  padding: 2rem;
+  position: relative;
+}
+body main section.resume .table table {
+  border-collapse: collapse;
+}
+body main section.resume .table table tr {
+  border-bottom: 2px solid gray;
+  transition: all 0.2s ease;
+}
+body main section.resume .table table tr:hover {
+  background-color: rgb(184, 255, 222);
+}
+body main section.resume .table table tr td {
+  padding: 0.5rem;
+}
+body main section.resume .picture {
+  flex: 1 1 500px;
+  position: relative;
+}
+body main section.resume .picture img {
+  width: 30vw;
+}
+body main section.resume .picture .greenRect {
+  width: 30vw;
+  height: 60vh;
+  border: 10px solid rgb(195, 255, 200);
+  position: absolute;
+  top: -20px;
+  left: 80px;
+  z-index: -1;
+}
+body main section.resume .picture .greenRect1 {
+  width: 40vw;
+  height: 30vh;
+  border: 10px solid rgb(195, 255, 200);
+  position: absolute;
+  top: 70px;
+  left: -100px;
+  z-index: -1;
+}
+body main section.resume .picture .greenRect2 {
+  position: absolute;
+  width: 60vw;
+  height: 70vh;
+  border: 10px solid rgb(195, 255, 200);
+  top: 100px;
+  left: -300px;
+  z-index: -1;
+}
+
+@media screen and (max-width: 600px) {
+  header nav ul {
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  header nav ul li {
+    padding: 0.5rem;
+  }
+  main section.introduce {
+    text-align: center;
+  }
+  main section.introduce img {
+    min-width: 80%;
+    margin-bottom: 1rem;
+  }
+  main section.aboutMe .about {
+    min-width: 90%;
+  }
+  main section.resume .picture {
+    text-align: center;
+  }
+  main section.resume .picture img {
+    min-width: 80%;
+  }
+}/*# sourceMappingURL=style.css.map */

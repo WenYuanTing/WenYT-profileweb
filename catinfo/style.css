@@ -1,0 +1,236 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: DFkai-sb, sans-serif;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+.top {
+  padding: 5px;
+  color: lightyellow;
+  background-image: url("./images/S__2187271.jpg");
+}
+
+.list {
+  padding: 5px;
+  font-size: 1.3rem;
+
+  list-style-type: none;
+  background-color: rgb(150, 146, 171);
+}
+
+header ul li {
+  display: inline;
+  padding: 0 15px;
+}
+a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: all 0.5s ease;
+}
+a:hover {
+  color: yellow;
+}
+main {
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.left {
+  margin: 10px;
+  flex: 4 1 500px;
+}
+.left h2 {
+  margin: 1rem 0rem;
+}
+p {
+  margin-bottom: 1rem;
+}
+.right {
+  flex: 1 1 200px;
+}
+figure img {
+  width: 90%;
+}
+
+main table,
+tr,
+td {
+  padding: 0.25rem;
+}
+table {
+  padding-top: 1rem;
+}
+.left ul li {
+  margin-left: 2rem;
+}
+
+.right h3 {
+  padding-bottom: 1rem;
+}
+.right figcaption {
+  padding-bottom: 1rem;
+}
+
+.top2 {
+  padding: 15px;
+}
+
+.down h3 {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+.down h4 {
+  font-size: 1.5rem;
+  color: rgb(10, 119, 82);
+}
+.down h5 {
+  font-size: 1.2rem;
+  color: rgb(64, 133, 110);
+}
+.palyer {
+  margin: 1rem 2rem 3rem 3rem;
+  padding: 0.5rem;
+  border: 3px solid rgb(221, 203, 42);
+}
+
+.japan {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.japan img {
+  flex: 1 1 300px;
+  max-width: 60vh;
+}
+
+.japanInfo {
+  flex: 1 1 300px;
+  padding: 2rem;
+}
+.japanLeft p {
+  padding-left: 2rem;
+}
+.japanLeft ul {
+  padding-left: 3rem;
+}
+.japanLeft {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.japanLeft .text {
+  flex: 2 1 100px;
+}
+
+#piechart {
+  flex: 1 1 400px;
+}
+
+.chinatop p {
+  padding: 0rem 1rem;
+}
+
+.chinadown p {
+  padding: 0rem 1rem;
+}
+h2 {
+  padding: 1rem;
+  font-size: 2rem;
+  color: rgb(10, 119, 82);
+}
+.chinadown table,
+th,
+tr,
+td {
+  border: 1px solid white;
+  border-collapse: collapse;
+}
+.chinadown th {
+  background-color: rgb(86, 229, 181);
+  color: white;
+}
+.chinadown table {
+  margin-left: 1rem;
+  min-width: 1000px;
+}
+
+.taiwan {
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  font-size: 2rem;
+  color: rgb(10, 119, 82);
+}
+
+main4 ul {
+  padding-left: 3rem;
+}
+main4 p {
+  padding-left: 1rem;
+}
+
+.active {
+  color: yellow;
+}
+
+ul {
+  /* 取消ul預設的內縮及樣式 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ul.drop-down-menu {
+  display: inline-block;
+}
+ul.drop-down-menu li {
+  position: relative;
+  white-space: nowrap;
+}
+ul.drop-down-menu > li:last-child {
+  border-right: none;
+}
+ul.drop-down-menu > li {
+  float: left; /* 只有第一層是靠左對齊*/
+}
+ul.drop-down-menu a {
+  display: block;
+  padding: 0 30px;
+}
+ul.drop-down-menu li:hover > a {
+  /* 滑鼠移入次選單上層按鈕保持變色*/
+  color: yellow;
+}
+ul.drop-down-menu ul {
+  position: absolute;
+  z-index: 99;
+  left: 50px;
+  top: 100%;
+  background-color: rgb(150, 146, 171);
+  border-bottom-left-radius: 10%;
+  border-bottom-right-radius: 10%;
+}
+
+ul.drop-down-menu ul li:last-child {
+  border-bottom: none;
+}
+
+ul.drop-down-menu ul {
+  /*隱藏次選單*/
+  display: none;
+}
+
+ul.drop-down-menu li:hover > ul {
+  /* 滑鼠滑入展開次選單*/
+  display: block;
+}
+
+.japanInfo ol li {
+  margin-left: 40px;
+}
