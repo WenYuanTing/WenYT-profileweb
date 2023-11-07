@@ -55,8 +55,13 @@ body {
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-
+      transition: background-image 1s ease;
       .info {
+        backdrop-filter: hue-rotate(320deg); /* 色相旋轉 */
+        -webkit-backdrop-filter: hue-rotate(320deg);
+
+        border-radius: 5px;
+        z-index: 1;
         opacity: 0;
         animation: slideFromLeft2 2s ease;
         transition: opacity 1s ease, transform 3s ease; /* 定义过渡效果 */

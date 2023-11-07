@@ -1,3 +1,27 @@
+const backgroundImages = [
+  "./images/catInfoPic.png",
+  "./images/snakePic.png",
+  "./images/JapanWebSitePic.png",
+  "./images/NewsPic.png",
+];
+let currentImageIndex = 0;
+const introduce = document.querySelector(".introduce");
+const info = document.querySelector(".info");
+function changeBackgroundImage() {
+  introduce.style.backgroundImage = `url(${backgroundImages[currentImageIndex]})`;
+  currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+
+  if (currentImageIndex === 2 || currentImageIndex === 3) {
+    info.style.color = "white";
+  } else {
+    info.style.color = "black";
+  }
+}
+changeBackgroundImage();
+
+// 设置定时器以定期更改背景图片
+setInterval(changeBackgroundImage, 3000); // 5000毫秒（5秒）更换一次图片
+
 document.addEventListener("DOMContentLoaded", function () {
   const info = document.querySelector(".info");
   const slideImg = document.querySelector(".slideImg");
@@ -76,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
       isScrolling2 = true;
     }
     if (remainingScroll < 1 && !popUp) {
-      // 当页面滚动到底部时打开弹出视窗
       popup.style.display = "block";
       console.log("到达最底部");
       popUp = true;
@@ -89,7 +112,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// 当页面滚动时触发
 window.onscroll = function () {
   scrollFunction();
 };
@@ -103,11 +125,8 @@ function scrollFunction() {
   }
 }
 
-// 点击按钮时滚动回顶部
 document.querySelector(".topest").addEventListener("click", function () {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
   popup.style.display = "none";
 });
-
-// 获取按钮和弹出视窗的元素
