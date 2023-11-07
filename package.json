@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "gsap": "^3.12.2",
+    "jquery": "^3.7.1",
+    "textify.js": "^3.0.1"
+  }
+}

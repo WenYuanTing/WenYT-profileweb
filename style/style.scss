@@ -2,6 +2,8 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+
+  --borderColor: #87843b;
 }
 
 h1,
@@ -14,24 +16,28 @@ h6 {
 
 body {
   header {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* 调整阴影属性以满足需求 */
+
     nav {
-      position: sticky;
-      top: 0;
+      margin-top: 1rem;
       z-index: 5;
-      padding: 1rem 3rem;
 
       ul {
         display: flex;
 
         li {
-          padding-right: 2rem;
+          padding-right: 1.5rem;
           list-style-type: none;
 
           a {
             color: black;
             transition: all 0.5s ease;
             text-decoration: none;
-
+            font-size: 1.25rem;
             &:hover {
               color: rgb(59, 221, 181);
             }
@@ -51,7 +57,10 @@ body {
       justify-content: center;
 
       .info {
-        //border: 1px solid green;
+        opacity: 0;
+        animation: slideFromLeft2 2s ease;
+        transition: opacity 1s ease, transform 3s ease; /* 定义过渡效果 */
+
         flex-basis: 400px;
 
         h1 {
@@ -79,31 +88,78 @@ body {
         }
       }
 
-      img {
+      .slideImg {
+        opacity: 0; /* 初始时隐藏元素 */
+        transition: opacity 1s ease, transform 1s ease; /* 定义过渡效果 */
+        animation: slideFromLeft 1s ease;
         flex-basis: 300px;
-        //border: 1px solid red;
         max-width: 30vw;
+      }
+      .active {
+        opacity: 1; /* 当添加 'active' 类时，逐渐显示元素 */
       }
     }
     section.aboutMe {
+      min-height: 300px; /* 你可以根据需要设置一个最小高度 */
       background-color: rgb(231, 255, 233);
       padding: 5rem 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
+      overflow: hidden;
+
+      .animation-border {
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* 垂直居中 */
+        align-items: center; /* 垂直居中 */
+        position: relative;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          transition: 0.3s ease-in-out;
+        }
+        &::before {
+          top: -5px;
+          left: -5px;
+          border-top: 2px solid var(--borderColor);
+          border-left: 2px solid var(--borderColor);
+        }
+        &::after {
+          right: -5px;
+          bottom: -5px;
+          border-bottom: 2px solid var(--borderColor);
+          border-right: 2px solid var(--borderColor);
+        }
+        &:hover::before,
+        &:hover::after {
+          width: calc(100% + 9px);
+          height: calc(100% + 9px);
+        }
+      }
       .about {
-        //border: 1px solid black;
-        width: 50%;
-        text-align: center;
+        opacity: 0;
+        transition: opacity 1s ease;
+
+        width: 80%;
+        text-align: center; /* 水平居中 */
+        display: flex;
+        flex-direction: column;
         h2 {
           font-size: 2rem;
           margin-bottom: 1rem;
         }
       }
       .progress-area {
-        // border: 1px solid red;
+        width: 100%;
 
-        p {
+        .showtext {
+          opacity: 0;
+
           margin: 0.5rem 0rem;
         }
         .progress-bar-area {
@@ -125,6 +181,11 @@ body {
         table {
           border-collapse: collapse;
           tr {
+            opacity: 0;
+
+            transition: opacity 1s ease, transform 1s ease;
+            animation: slideFromDown 3s ease;
+
             border-bottom: 2px solid gray;
             transition: all 0.2s ease;
             &:hover {
@@ -134,14 +195,26 @@ body {
               padding: 0.5rem;
             }
           }
+          .active {
+            opacity: 1; /* 当添加 'active' 类时，逐渐显示元素 */
+          }
         }
       }
       .picture {
         flex: 1 1 500px;
         position: relative;
-        img {
-          width: 30vw;
+        height: auto;
+        z-index: -1;
+
+        .picAnimation {
+          text-align: center;
+          padding: 20px;
+          img {
+            width: 30vw;
+            padding: 0.5rem;
+          }
         }
+
         .greenRect {
           width: 30vw;
           height: 60vh;
@@ -170,6 +243,42 @@ body {
           z-index: -1;
         }
       }
+    }
+    .topest {
+      display: none;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      border: none;
+      background: rgba(255, 255, 255, 1);
+      z-index: 2;
+      border-radius: 100%;
+      transition: transform 1s;
+      &:hover {
+        transform: rotate(360deg);
+      }
+      img {
+        z-index: 2;
+      }
+    }
+
+    #popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+    .pointer {
+      position: fixed;
+      bottom: 100px;
+      right: 20px;
+      animation: move 0.5s infinite alternate;
     }
   }
 }
@@ -206,4 +315,135 @@ body {
       }
     }
   }
+  /* 弹出视窗样式 */
+}
+
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromLeft2 {
+  0% {
+    transform: translateX(-230%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideFromDown {
+  0% {
+    transform: translateY(150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* 定义边框动画 */
+@keyframes runningBorder {
+  0% {
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+  }
+  25% {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 0;
+  }
+  50% {
+    left: 100%;
+    top: 0;
+    width: 0;
+    height: 100%;
+  }
+  75% {
+    left: 0;
+    top: 100%;
+    width: 0;
+    height: 0;
+  }
+  100% {
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+@keyframes opacityChange {
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(20px); /* 根据需要调整垂直位移 */
+  }
+}
+
+.picAnimation {
+  --borderWidth: 15px;
+  --bRadius: 10px;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: --bRadius;
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #1a232a;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: conic-gradient(
+      transparent,
+      rgba(168, 239, 255, 1),
+      transparent 30%
+    );
+    animation: rotate 4s linear infinite;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: calc(var(--borderWidth) / 2);
+    top: calc(var(--borderWidth) / 2);
+    width: calc(100% - var(--borderWidth));
+    height: calc(100% - var(--borderWidth));
+    background: #000;
+    border-radius: 10px;
+  }
+}
+
+.picAnimation ::after {
+  animation: opacityChange 5s infinite linear;
 }
