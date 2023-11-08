@@ -49,12 +49,13 @@ body {
 
   main {
     section.introduce {
-      background-color: white;
       min-height: 70vh;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
+      background-image: url("../images/catInfoPic.png");
+
       transition: background-image 1s ease;
       .info {
         backdrop-filter: hue-rotate(320deg); /* 色相旋轉 */
@@ -69,7 +70,7 @@ body {
         flex-basis: 400px;
 
         h1 {
-          font-size: 3.5rem;
+          font-size: 3rem;
         }
 
         h2 {
@@ -451,4 +452,20 @@ body {
 
 .picAnimation ::after {
   animation: opacityChange 5s infinite linear;
+}
+@keyframes colorize {
+  from {
+    color: black;
+  }
+  to {
+    color: white;
+  }
+}
+@keyframes colorize2 {
+  from {
+    color: white;
+  }
+  to {
+    color: black;
+  }
 }

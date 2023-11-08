@@ -42,12 +42,12 @@ body header nav ul li a:hover {
   color: rgb(59, 221, 181);
 }
 body main section.introduce {
-  background-color: white;
   min-height: 70vh;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  background-image: url("../images/catInfoPic.png");
   transition: background-image 1s ease;
 }
 body main section.introduce .info {
@@ -61,7 +61,7 @@ body main section.introduce .info {
   flex-basis: 400px;
 }
 body main section.introduce .info h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 body main section.introduce .info h2 {
   font-size: 1rem;
@@ -404,4 +404,21 @@ body main .pointer {
 
 .picAnimation ::after {
   animation: opacityChange 5s infinite linear;
+}
+
+@keyframes colorize {
+  from {
+    color: black;
+  }
+  to {
+    color: white;
+  }
+}
+@keyframes colorize2 {
+  from {
+    color: white;
+  }
+  to {
+    color: black;
+  }
 }/*# sourceMappingURL=style.css.map */

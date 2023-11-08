@@ -1,27 +1,54 @@
-const backgroundImages = [
-  "./images/catInfoPic.png",
-  "./images/snakePic.png",
-  "./images/JapanWebSitePic.png",
-  "./images/NewsPic.png",
-];
-let currentImageIndex = 0;
 const introduce = document.querySelector(".introduce");
 const info = document.querySelector(".info");
-function changeBackgroundImage() {
-  introduce.style.backgroundImage = `url(${backgroundImages[currentImageIndex]})`;
-  currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+const infoH1 = document.querySelector(".info h1");
+const infoH2 = document.querySelector(".info h2");
 
-  if (currentImageIndex === 2 || currentImageIndex === 3) {
-    info.style.color = "white";
-  } else {
-    info.style.color = "black";
-  }
+function colorizeText(textElement, color) {
+  const text = textElement.textContent;
+  const letters = text.split("");
+  const spanElements = [];
+  textElement.textContent = "";
+
+  letters.forEach((letter, index) => {
+    const span = document.createElement("span");
+    span.textContent = letter;
+    span.style.color = color;
+
+    if (span.style.color == "white") {
+      span.style.animation = `colorize 1s ${index * 0.1}s forwards`;
+    } else if (span.style.color == "black") {
+      span.style.animation = `colorize2 1s ${index * 0.1}s forwards`;
+    }
+    spanElements.push(span);
+  });
+  spanElements.forEach((span) => {
+    textElement.appendChild(span);
+  });
 }
-changeBackgroundImage();
 
-// 设置定时器以定期更改背景图片
-setInterval(changeBackgroundImage, 3000); // 5000毫秒（5秒）更换一次图片
+let backgroundIndex = 0;
 
+const backgroundImages = [
+  'url("./images/catInfoPic.png")',
+  'url("./images/snakePic.png")',
+  'url("./images/JapanWebSitePic.png")',
+  'url("./images/NewsPic.png")',
+];
+
+setInterval(() => {
+  introduce.style.backgroundImage = backgroundImages[backgroundIndex];
+  if (backgroundIndex == 3) {
+    colorizeText(infoH1, "black");
+    colorizeText(infoH2, "black");
+  } else if (backgroundIndex == 1) {
+    colorizeText(infoH1, "white");
+    colorizeText(infoH2, "white");
+  }
+
+  backgroundIndex = (backgroundIndex + 1) % backgroundImages.length;
+}, 3000);
+
+//-------------------
 document.addEventListener("DOMContentLoaded", function () {
   const info = document.querySelector(".info");
   const slideImg = document.querySelector(".slideImg");
@@ -50,38 +77,34 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(remainingScroll);
 
     if (scrollY >= 650 && !isScrolling) {
-      // 循环显示table中的每一行
       tableRows.forEach((row, index) => {
-        // 使用setTimeout来实现逐行显示的效果
         setTimeout(() => {
-          // 为行添加一个 CSS 类，以显示它
           row.classList.add("active");
-        }, 300 * index); // 每行之间的延迟时间
+        }, 300 * index);
       });
 
-      // 设置标志以避免重复触发动画
       isScrolling = true;
     }
     if (scrollY >= 100 && !isScrolling2) {
       about.style.opacity = 1;
       gsap.to(progressBars[0], {
-        duration: 1, // 动画持续时间为1秒
-        width: "30%", // 第一个进度条宽度
+        duration: 1,
+        width: "30%",
       });
 
       gsap.to(progressBars[1], {
         duration: 1,
-        width: "25%", // 第二个进度条宽度
+        width: "25%",
       });
 
       gsap.to(progressBars[2], {
         duration: 1,
-        width: "60%", // 第三个进度条宽度
+        width: "60%",
       });
 
       gsap.to(progressBars[3], {
         duration: 1,
-        width: "15%", // 第四个进度条宽度
+        width: "15%",
       });
       new Textify(
         {
