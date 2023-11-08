@@ -36,17 +36,35 @@ const backgroundImages = [
 ];
 
 setInterval(() => {
-  introduce.style.backgroundImage = backgroundImages[backgroundIndex];
-  if (backgroundIndex == 3) {
-    colorizeText(infoH1, "black");
-    colorizeText(infoH2, "black");
-  } else if (backgroundIndex == 1) {
+  const backgroundImage = getComputedStyle(introduce).backgroundImage;
+
+  if (backgroundImage.includes("catInfoPic.png")) {
+    introduce.style.backgroundImage = 'url("images/snakePic.png")';
     colorizeText(infoH1, "white");
     colorizeText(infoH2, "white");
+  } else if (backgroundImage.includes("snakePic.png")) {
+    introduce.style.backgroundImage = 'url("images/JapanWebSitePic.png")';
+  } else if (backgroundImage.includes("JapanWebSitePic.png")) {
+    introduce.style.backgroundImage = 'url("images/NewsPic.png")';
+    colorizeText(infoH1, "black");
+    colorizeText(infoH2, "black");
+  } else if (backgroundImage.includes("NewsPic.png")) {
+    introduce.style.backgroundImage = 'url("images/catInfoPic.png")';
   }
-
-  backgroundIndex = (backgroundIndex + 1) % backgroundImages.length;
 }, 3000);
+
+// setInterval(() => {
+//   introduce.style.backgroundImage = backgroundImages[backgroundIndex];
+//   if (backgroundIndex == 3) {
+//     colorizeText(infoH1, "black");
+//     colorizeText(infoH2, "black");
+//   } else if (backgroundIndex == 1) {
+//     colorizeText(infoH1, "white");
+//     colorizeText(infoH2, "white");
+//   }
+
+//   backgroundIndex = (backgroundIndex + 1) % backgroundImages.length;
+// }, 3000);
 
 //-------------------
 document.addEventListener("DOMContentLoaded", function () {
