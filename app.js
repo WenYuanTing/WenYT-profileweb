@@ -29,27 +29,27 @@ function colorizeText(textElement, color) {
 let backgroundIndex = 0;
 
 const backgroundImages = [
-  'url("./images/catInfoPic.png")',
-  'url("./images/snakePic.png")',
-  'url("./images/JapanWebSitePic.png")',
-  'url("./images/NewsPic.png")',
+  'url("./images/catInfoPic.jpg")',
+  'url("./images/snakePic.jpg")',
+  'url("./images/JapanWebSitePic.jpg")',
+  'url("./images/NewsPic.jpg")',
 ];
 
 setInterval(() => {
   const backgroundImage = getComputedStyle(introduce).backgroundImage;
 
-  if (backgroundImage.includes("catInfoPic.png")) {
-    introduce.style.backgroundImage = 'url("images/snakePic.png")';
+  if (backgroundImage.includes("catInfoPic.jpg")) {
+    introduce.style.backgroundImage = 'url("images/snakePic.jpg")';
     colorizeText(infoH1, "white");
     colorizeText(infoH2, "white");
-  } else if (backgroundImage.includes("snakePic.png")) {
-    introduce.style.backgroundImage = 'url("images/JapanWebSitePic.png")';
-  } else if (backgroundImage.includes("JapanWebSitePic.png")) {
-    introduce.style.backgroundImage = 'url("images/NewsPic.png")';
+  } else if (backgroundImage.includes("snakePic.jpg")) {
+    introduce.style.backgroundImage = 'url("images/JapanWebSitePic.jpg")';
+  } else if (backgroundImage.includes("JapanWebSitePic.jpg")) {
+    introduce.style.backgroundImage = 'url("images/NewsPic.jpg")';
     colorizeText(infoH1, "black");
     colorizeText(infoH2, "black");
-  } else if (backgroundImage.includes("NewsPic.png")) {
-    introduce.style.backgroundImage = 'url("images/catInfoPic.png")';
+  } else if (backgroundImage.includes("NewsPic.jpg")) {
+    introduce.style.backgroundImage = 'url("images/catInfoPic.jpg")';
   }
 }, 3000);
 
