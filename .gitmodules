@@ -1,0 +1,3 @@
+[submodule "ElevatorSystem"]
+    path = ElevatorSystem
+    url = https://github.com/example/ElevatorSystem.git
